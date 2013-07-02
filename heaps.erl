@@ -1,5 +1,7 @@
 -module(heaps).
-%% (c) 2013 Wojciech Kaczmarek. All rights reserved. See LICENSE file.
+%% (c) 2011-2013 Wojciech Kaczmarek <wk@dualtech.com.pl>. All rights reserved.
+%% Released under the BSD 2-clause license - see this for details:
+%% http://github.com/herenowcoder/erl-heaps/blob/master/LICENSE
 -export([ add/3, add/4, contains_value/2, delete_by_value/2, delete/3,
           is_empty/1, mapping/2, new/0, take_min/1 ]).
 

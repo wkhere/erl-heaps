@@ -19,3 +19,8 @@ beneficial to have this operation be faster than linear.
 
 Internally, the heap is just a joint of gb_tree holding priority heap
 and a dict holding a reverse mapping from values to tree keys.
+
+
+License
+=======
+This code is released under the BSD 2-Clause License.
