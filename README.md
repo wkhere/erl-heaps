@@ -14,7 +14,7 @@ All operations on a heap take _O(log n)_ time:
 * `delete_by_value`
 
 This is an extension of a classic priority heap which has only first
-three operation. The A* algo uses deletion by value and it was
+three operations. The A* algo uses deletion by value and it was
 beneficial to have this operation be faster than linear.
 
 Internally, the heap is just a joint of gb_tree holding priority heap
