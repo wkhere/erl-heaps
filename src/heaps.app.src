@@ -1,0 +1,12 @@
+{application, heaps,
+ [
+  {description, ""},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { heaps_app, []}},
+  {env, []}
+ ]}.
