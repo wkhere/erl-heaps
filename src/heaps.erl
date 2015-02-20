@@ -7,7 +7,7 @@
 
 -type pri() :: any().
 -type heap_tree_key() :: tuple(pri(), reference()).
--type heap() :: tuple(gb_tree(), dict()).
+-type heap() :: tuple(gb_tree:gb_tree(), dict:dict()).
 -export_type([heap/0]).
 
 -spec new() -> heap().
@@ -49,7 +49,7 @@ delete(TreeKey, Val, _Heap={T0,R0}) ->
     {gb_trees:delete(TreeKey, T0),  r_delete(Val, R0)}.
 -compile({inline, delete/3}).
 
--spec r_delete(any(), dict()) -> dict().
+-spec r_delete(any(), dict:dict()) -> dict:dict().
 r_delete(Val, R0) ->
     dict:update(Val, fun({_,Aux})-> {none,Aux} end, R0).
 -compile({inline, r_delete/2}).
