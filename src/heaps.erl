@@ -6,8 +6,8 @@
           is_empty/1, mapping/2, new/0, take_min/1 ]).
 
 -type pri() :: any().
--type heap_tree_key() :: tuple(pri(), reference()).
--type heap() :: tuple(gb_tree:gb_tree(), dict:dict()).
+-type heap_tree_key() :: {pri(), reference()}.
+-type heap() :: {gb_tree:gb_tree(), dict:dict()}.
 -export_type([heap/0]).
 
 -spec new() -> heap().
@@ -29,12 +29,12 @@ add(Pri, Val, Aux, Heap={T0,R0}) ->
     {gb_trees:insert(TreeKey, Val, T0),
      dict:store(Val, {TreeKey, Aux}, R0)}.
 
--spec take_min(heap()) -> tuple(pri(), any(), heap()).
+-spec take_min(heap()) -> {pri(), any(), heap()}.
 take_min(_Heap={T0,R0}) ->
     {{Pri,_}, Val, T1} = gb_trees:take_smallest(T0),
     {Pri, Val, {T1, r_delete(Val, R0)}}.
 
--spec mapping(any(), heap()) -> tuple(heap_tree_key(), any()).
+-spec mapping(any(), heap()) -> {heap_tree_key(), any()}.
 mapping(Val, _Heap={_T,R}) ->
     {_TreeKey, _Aux} = dict:fetch(Val, R).
 -compile({inline, mapping/2}).
